@@ -1,0 +1,18 @@
+div{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin: 8px;
+}
+.bold{
+    font-weight: bold;
+}
+.checkStyle{
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+}
+.checkStyleLabel{
+    padding: 2px 10px;
+    font-weight: bold;
+}
