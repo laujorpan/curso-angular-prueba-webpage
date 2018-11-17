@@ -1,3 +1,4 @@
+<div *ngIf=coche.disponible>
 <h1>Coche: </h1>
 <div>
     <div>Modelo: {{coche.modelo}} {{coche.color}} con matricula {{coche.matricula}}</div>
@@ -7,4 +8,10 @@
     <label class ='checkStyleLabel' for="promocion_check">Promocion</label>
   </div>
     <div *ngIf=coche.promocion  class =  'bold'>Precio con promo: {{coche.precio_con_promo}}</div>
+</div>
+<div>
+  <input type="email" [(ngModel)]="email" />
+  <input type="button" value="Send me the info" (click)=sendEmail() />
+  <div *ngIf=show_result>{{result_message}}</div>
+</div>
 </div>

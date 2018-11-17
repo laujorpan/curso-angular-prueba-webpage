@@ -7,7 +7,7 @@ export class Coche {
     descuento:number;
     promocion:boolean;
     precio_con_promo:number;
-    error:string;
+    disponible:boolean;
 
     constructor() { }
     changePromo(){
@@ -16,7 +16,6 @@ export class Coche {
         if(this.promocion){
             this.descuento=Number(prompt("Introduce el porcentaje (0-100)"))
             if (isNaN(this.descuento)){
-                this.error = "Error en descuento"
                 this.descuento=undefined;
                 this.precio_con_promo=undefined;
             }

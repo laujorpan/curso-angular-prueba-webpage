@@ -9,7 +9,9 @@ import { Coche } from '../model/coche';
 export class CocheComponent implements OnInit {
 
   @Input() public coche: Coche /*= new Coche()*/;
-
+  email:string="ejemplo@email.com";
+  result_message:string;
+  show_result:boolean = false
   constructor() { }
 
   ngOnInit() {
@@ -24,5 +26,13 @@ export class CocheComponent implements OnInit {
     */
         
   }
-
+  sendEmail(){
+    if (this.email===undefined ||this.email==="ejemplo@email.com"){
+      this.result_message='Put your email and try again';
+    }else{
+      this.result_message='Sent to '+this.email;
+      this.email=undefined;
+    }
+    this.show_result=true;
+  }
 }
