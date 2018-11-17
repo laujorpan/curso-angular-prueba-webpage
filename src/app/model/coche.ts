@@ -8,6 +8,7 @@ export class Coche {
     promocion:boolean;
     precio_con_promo:number;
     disponible:boolean;
+    imagenUrl:string;
 
     constructor() { }
     changePromo(){

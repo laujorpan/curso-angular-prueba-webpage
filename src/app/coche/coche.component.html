@@ -1,17 +1,21 @@
 <div *ngIf=coche.disponible>
-<h1>Coche: </h1>
-<div>
-    <div>Modelo: {{coche.modelo}} {{coche.color}} con matricula {{coche.matricula}}</div>
-    <div class = 'bold'>Precio: {{coche.precio}}</div>
-    <div>
-    <input class = 'checkStyle' type="checkbox" id = "promocion_check" ng-model="coche.promocion" (click)=coche.changePromo()/>
-    <label class ='checkStyleLabel' for="promocion_check">Promocion</label>
+  <h1>Coche: </h1>
+  <div>
+      <div>Modelo: {{coche.modelo}} {{coche.color}} con matricula {{coche.matricula}}</div>
+      <div class = 'bold'>Precio: {{coche.precio}}</div>
+      <div>
+      <input class = 'checkStyle' type="checkbox" id = "promocion_check" ng-model="coche.promocion" (click)=coche.changePromo()/>
+      <label class ='checkStyleLabel' for="promocion_check">Promocion</label>
+    </div>
+      <div *ngIf=coche.promocion  class = 'bold'>Precio con promo: {{coche.precio_con_promo}}</div>
   </div>
-    <div *ngIf=coche.promocion  class =  'bold'>Precio con promo: {{coche.precio_con_promo}}</div>
-</div>
-<div>
-  <input type="email" [(ngModel)]="email" />
-  <input type="button" value="Send me the info" (click)=sendEmail() />
-  <div *ngIf=show_result>{{result_message}}</div>
-</div>
+  <div>
+    <input type="email" [(ngModel)]="email" />
+    <input type="button" value="Send me the info" (click)=sendEmail() />
+    <div *ngIf=show_result>{{result_message}}</div>
+  </div>
+  <div>
+    <input type="button" value="See car photo" (click)=showImage() />
+    <div *ngIf=show_image> <img src={{coche.imagenUrl}}/></div>
+  </div>
 </div>

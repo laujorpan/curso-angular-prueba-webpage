@@ -21,6 +21,7 @@ export class CocheCatalogComponent implements OnInit {
     coche.precio=20000;
     coche.promocion=false
     coche.disponible=true;
+    coche.imagenUrl="https://cdn1.juguetes.org/wp-content/uploads/coche-para-bebe.jpg"
     this.catalog.push(coche);
     
     let coche1 = new Coche();
@@ -32,6 +33,7 @@ export class CocheCatalogComponent implements OnInit {
     coche1.precio=23000;
     coche1.promocion=false
     coche1.disponible=false;
+    coche1.imagenUrl="http://www.mamidecora.com/carpetas%20presentacion/juguetes/coches%20y%20motos/little%20tike%20coche/little%20tikes.jpg"
     this.catalog.push(coche1);
 
     let coche2 = new Coche();
@@ -43,6 +45,7 @@ export class CocheCatalogComponent implements OnInit {
     coche2.precio=18000;
     coche2.promocion=false
     coche2.disponible=true;
+    coche2.imagenUrl="http://www.mamidecora.com/portadas_imagenes/juguetes/coches-para-ni%C3%B1os.jpg"
     this.catalog.push(coche2);
   }
 
