@@ -1,0 +1,16 @@
+<div>
+    <h2>Juguete: {{juguete.nombre}} </h2>
+    <div>
+        <div [ngSwitch]="juguete.marca">
+            <div class="texto-azul" *ngSwitchCase="'Famosa'">Marca:{{juguete.marca}}</div>   
+            <div class="texto-morado" *ngSwitchCase="'Mattel'">Marca: {{juguete.marca}}</div>   
+            <div class="texto-rojo" *ngSwitchDefault>Marca: {{juguete.marca}}</div>   
+        </div>
+        <div class = 'bold'>Precio: {{juguete.precio}} €</div>
+    </div>
+    <div>
+      <input type="button" value="See image" (click)=showImage() />
+      <div *ngIf=show_image> <img src={{juguete.imagenUrl}}/></div>
+    </div>
+  </div>
+  

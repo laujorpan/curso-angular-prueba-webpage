@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Coche } from '../model/coche';
+import { COLORES,MODELOS,IMAGENES,NUM_PUERTAS } from '../model/coche';
 
 @Component({
   selector: 'app-coche-catalog',
@@ -7,46 +8,37 @@ import { Coche } from '../model/coche';
   styleUrls: ['./coche-catalog.component.scss']
 })
 export class CocheCatalogComponent implements OnInit {
-  catalog: Array<Coche> = []
 
+  catalog: Array<Coche> = [];
+  total_catalogo:number = 10;
   constructor() { }
 
   ngOnInit() {
-    let coche = new Coche();
-    coche.color= 'Blanco'
-    coche.descuento=Math.round(Math.random()*100)
-    coche.matricula='BBM 1111';
-    coche.modelo='Skoda';
-    coche.num_puertas=3;
-    coche.precio=20000;
-    coche.promocion=false
-    coche.disponible=true;
-    coche.imagenUrl="https://cdn1.juguetes.org/wp-content/uploads/coche-para-bebe.jpg"
-    this.catalog.push(coche);
+    for (let index = 0; index < this.total_catalogo; index++) {
+      let coche = new Coche();
+      coche.color= COLORES[Math.round(Math.random()*10)%COLORES.length]
+      coche.matricula=this.generarMatricula();
+      coche.modelo= MODELOS[Math.round(Math.random()*10)%MODELOS.length];
+      coche.num_puertas=NUM_PUERTAS[Math.round(Math.random()*10)%NUM_PUERTAS.length];
+      coche.precio=Math.round(Math.random()*100000);
+      coche.disponible=true;
+      coche.imagenUrl=IMAGENES[Math.round(Math.random()*10)%IMAGENES.length];
+      this.catalog.push(coche);
+    }
+  }
+  generarMatricula() {
+    var text = "";
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  
+    for (var i = 0; i < 3; i++)
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
     
-    let coche1 = new Coche();
-    coche1.color= 'Raro'
-    coche1.descuento=Math.round(Math.random()*100)
-    coche1.matricula='RRR 2211';
-    coche1.modelo='Undefined';
-    coche1.num_puertas=3;
-    coche1.precio=23000;
-    coche1.promocion=false
-    coche1.disponible=false;
-    coche1.imagenUrl="http://www.mamidecora.com/carpetas%20presentacion/juguetes/coches%20y%20motos/little%20tike%20coche/little%20tikes.jpg"
-    this.catalog.push(coche1);
-
-    let coche2 = new Coche();
-    coche2.color= 'Negro'
-    coche2.descuento=Math.round(Math.random()*100)
-    coche2.matricula='BSS 2413';
-    coche2.modelo='Opel';
-    coche2.num_puertas=5;
-    coche2.precio=18000;
-    coche2.promocion=false
-    coche2.disponible=true;
-    coche2.imagenUrl="http://www.mamidecora.com/portadas_imagenes/juguetes/coches-para-ni%C3%B1os.jpg"
-    this.catalog.push(coche2);
+    text+=' '
+    
+    for (var i = 0; i < 4; i++)
+      text += Math.round(Math.random()*10)%10;
+    
+    return text;
   }
 
 }

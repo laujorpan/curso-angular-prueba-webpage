@@ -30,8 +30,6 @@ export class CocheComponent implements OnInit {
     this.show_result=true;
   }
   showImage(){
-    console.log(this.coche.modelo);
     this.show_image=!this.show_image;
-    console.log(this.show_image);
   }
 }

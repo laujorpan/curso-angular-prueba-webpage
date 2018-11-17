@@ -8,6 +8,9 @@ import { MicomponenteComponent } from './micomponente/micomponente.component';
 import { PersonaComponent } from './persona/persona.component';
 import { CocheComponent } from './coche/coche.component';
 import { CocheCatalogComponent } from './coche-catalog/coche-catalog.component';
+import { JugueteComponent } from './juguete/juguete.component';
+import { JugueteCatalogComponent } from './juguete-catalog/juguete-catalog.component';
+import { RoutingManagerComponent } from './routing-manager/routing-manager.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { CocheCatalogComponent } from './coche-catalog/coche-catalog.component';
     MicomponenteComponent,
     PersonaComponent,
     CocheComponent,
-    CocheCatalogComponent
+    CocheCatalogComponent,
+    JugueteComponent,
+    JugueteCatalogComponent,
+    RoutingManagerComponent
   ],
   imports: [
     BrowserModule,

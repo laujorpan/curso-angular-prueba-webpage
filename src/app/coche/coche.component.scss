@@ -1,11 +1,4 @@
-div{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 18px;
-    margin: 8px;
-}
-.bold{
-    font-weight: bold;
-}
+
 .checkStyle{
     -ms-transform: scale(2); /* IE */
     -moz-transform: scale(2); /* FF */
@@ -15,4 +8,20 @@ div{
 .checkStyleLabel{
     padding: 2px 10px;
     font-weight: bold;
+}
+
+.texto-rojo{
+    color: red;
+    font-weight: bold;
+    font-size: 20px;
+}
+.texto-azul{
+    color: blue;
+    font-weight: bold;
+    font-size: 20px;
+}
+.texto-morado{
+    color:rgb(129, 65, 129);
+    font-weight: bold;
+    font-size: 20px;
 }

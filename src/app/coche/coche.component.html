@@ -1,13 +1,18 @@
 <div *ngIf=coche.disponible>
-  <h1>Coche: </h1>
+  <h2>Coche: {{coche.matricula}} </h2>
   <div>
-      <div>Modelo: {{coche.modelo}} {{coche.color}} con matricula {{coche.matricula}}</div>
-      <div class = 'bold'>Precio: {{coche.precio}}</div>
+      <div [ngSwitch]="coche.modelo">
+          <div class="texto-azul" *ngSwitchCase="'Citroen'">Modelo: {{coche.modelo}}</div>   
+          <div class="texto-morado" *ngSwitchCase="'Opel'">Modelo: {{coche.modelo}}</div>   
+          <div class="texto-rojo" *ngSwitchDefault>Modelo: {{coche.modelo}}</div>   
+      </div>
+      <div>Coche {{coche.color}} con matricula {{coche.matricula}}</div>
+      <div class = 'bold'>Precio: {{coche.precio}} €</div>
       <div>
       <input class = 'checkStyle' type="checkbox" id = "promocion_check" ng-model="coche.promocion" (click)=coche.changePromo()/>
       <label class ='checkStyleLabel' for="promocion_check">Promocion</label>
     </div>
-      <div *ngIf=coche.promocion  class = 'bold'>Precio con promo: {{coche.precio_con_promo}}</div>
+      <div *ngIf=coche.promocion  class = 'bold'>Precio con promo: {{coche.precio_con_promo}} €</div>
   </div>
   <div>
     <input type="email" [(ngModel)]="email" />
